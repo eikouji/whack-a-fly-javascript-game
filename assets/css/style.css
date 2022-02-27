@@ -30,6 +30,7 @@ body {
   width: 160px;
   --border: 1px solid black;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .onion {
@@ -38,15 +39,18 @@ body {
     left: -20px;
     width: 150px;
     object-fit: cover;
+    pointer-events: none;
 }
 
 .houseFly {
     position: absolute;
-    top: 0px;
+    top: 155px;
     left: 0px;
     width: 155px;
     object-fit: contain;
     pointer-events: all;
+    z-index: -1;
+    cursor: pointer;
 }
 
 .scoretable {
@@ -125,11 +129,33 @@ body {
     align-items: center;
 }
 
+.modal-close {
+    opacity: 0;
+    pointer-events: none;
+}
+
 @keyframes scorebump {
     from {
         transform: translateY(10px);
     }
     to {
         transform: translateY(-10px);
+    }
+}
+
+@keyframes faceup {
+    from {
+        transform: translateY(140px);
+    }
+    to {
+        transform: translateY(-130px);
+    }
+}
+@keyframes facedown {
+    from {
+        transform: translateY(-130px);
+    }
+    to {
+        transform: translate(140px);
     }
 }
