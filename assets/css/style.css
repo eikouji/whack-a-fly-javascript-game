@@ -6,26 +6,130 @@
 }
 
 body {
-    font-family: "Press Start 2P", cursive;
+    font-family: Helvetica;
     min-height: 100vh;
+    background: skyblue;
 }
 
 .holes {
     position: absolute;
     display: grid;
-    grid-template-columns: repeat(4, 160px);
+    grid-template-columns: repeat(4, 150px);
     gap: 10px;
-    top: 50%;
+    top: 70%;
     left: 50%;
-    width: 670px;
-    height: 630px;
+    width: 600px;
+    height: 600px;
     transform: translate(-50%, -50%);
-    border: 2px solid black;
+    --border: 2px solid black;
 }
 
 .hole {
   position: relative;
   height: 150px;
   width: 160px;
-  border: 1px solid black;
+  --border: 1px solid black;
+  overflow: hidden;
+}
+
+.onion {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.houseFly {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 155px;
+    object-fit: contain;
+    pointer-events: all;
+}
+
+.scoretable {
+    font-size: 1.5rem;
+    height: 100px;
+    padding: 0.5rem 1rem;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: black;
+    left: 5%;
+    top: 5%;
+    transform: translate(-5%, -5%,);
+    border: 1px solid white;
+}
+
+.scoretable div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal {
+    cursor: default;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: skyblue;
+    pointer-events: all;
+    z-index: 1000;
+    color: white;
+}
+.modal button {
+    padding: 1rem 2rem;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.8s ease;
+    font-family: Courier Sans;
+    font-size: 20px;
+}
+
+.modal button:hover {
+    background: rgb(14, 77, 160);
+    color: skyblue;
+}
+
+.modal h1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+
+.modal h2 {
+    visibility: hidden;
+}
+
+.highscore {
+    margin-left: 10px;
+    animation: scorebump 0.5s ease infinite alternate;
+}
+
+.display {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@keyframes scorebump {
+    from {
+        transform: translateY(10px);
+    }
+    to {
+        transform: translateY(-10px);
+    }
 }
