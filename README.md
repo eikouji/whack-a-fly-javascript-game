@@ -19,6 +19,4 @@ https://youtu.be/UnrtgpQlAz4
 
 # Screep cap of working app #
 
-# Codepen.io URL #
-
-# GitHub Pages URL #
+# Codepen.io URL GitHub Pages URL #
